@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia do Hóspede | EcoContainer Piracaia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        forest: {
+                            600: '#2d6a4f',
+                            700: '#1b4332',
+                            800: '#081c15',
+                            900: '#040d0a'
+                        },
+                        amberWood: '#c99a5b',
+                        warmSand: '#fbf9f5'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-warmSand text-stone-800 antialiased font-sans pb-16">
+
+    <!-- Header Mobile-First -->
+    <div class="relative bg-stone-900 text-white h-64 overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1587061949409-02df41d5e562?auto=format&fit=crop&w=1000&q=80" 
+             alt="EcoContainer Piracaia" 
+             class="w-full h-full object-cover opacity-60">
+        
+        <div class="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/40 to-transparent"></div>
+
+        <div class="absolute bottom-5 left-5 right-5 max-w-lg mx-auto">
+            <span class="bg-emerald-500/90 text-stone-950 text-[11px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">
+                Manual Digital de Boas-Vindas
+            </span>
+            <h1 class="font-serif text-2xl sm:text-3xl font-bold mt-2 text-white">EcoContainer Piracaia</h1>
+            <p class="text-xs text-stone-300 mt-1 flex items-center gap-1">
+                <i data-lucide="map-pin" class="w-3.5 h-3.5 text-rose-400"></i> Piracaia • SP (Serra da Mantiqueira)
+            </p>
+        </div>
+    </div>
+
+    <main class="max-w-lg mx-auto px-4 mt-6 space-y-6">
+
+        <!-- Card de Boas-Vindas -->
+        <div class="bg-white p-5 rounded-3xl border border-stone-200/80 shadow-sm space-y-3">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-2xl bg-forest-100 text-forest-700 flex items-center justify-center font-serif text-lg font-bold">
+                    🌿
+                </div>
+                <div>
+                    <h2 class="font-bold text-forest-900 text-base">Olá, Hóspede!</h2>
+                    <p class="text-xs text-stone-500">Seja muito bem-vindo ao seu refúgio privativo na serra.</p>
+                </div>
+            </div>
+            <p class="text-xs text-stone-600 leading-relaxed pt-1 border-t border-stone-100">
+                Criamos este guia rápido com tudo o que você precisa saber para aproveitar o ofurô, a fogueira, a climatização e as melhores dicas gastronômicas de Piracaia.
+            </p>
+        </div>
+
+        <!-- 3 Ações Rápidas de Check-in -->
+        <div class="grid grid-cols-2 gap-3">
+            <!-- Wi-Fi -->
+            <div class="bg-white p-4 rounded-2xl border border-stone-200/80 shadow-sm space-y-2">
+                <div class="flex items-center justify-between">
+                    <span class="text-xs font-bold text-stone-500 flex items-center gap-1">
+                        <i data-lucide="wifi" class="w-4 h-4 text-emerald-600"></i> Wi-Fi
+                    </span>
+                    <span class="text-[10px] text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded font-semibold">Fibra</span>
+                </div>
+                <div>
+                    <span class="text-[11px] text-stone-400 block">Rede:</span>
+                    <strong class="text-xs text-stone-800">EcoContainer_5G</strong>
+                </div>
+                <div>
+                    <span class="text-[11px] text-stone-400 block">Senha:</span>
+                    <div class="flex items-center justify-between">
+                        <strong class="text-xs text-stone-800 font-mono" id="wifi-pass">piracaia2026</strong>
+                        <button onclick="copiarTexto('wifi-pass', this)" class="text-[11px] font-semibold text-emerald-600 hover:text-emerald-700">Copiar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fechadura Digital -->
+            <div class="bg-white p-4 rounded-2xl border border-stone-200/80 shadow-sm space-y-2">
+                <div class="flex items-center justify-between">
+                    <span class="text-xs font-bold text-stone-500 flex items-center gap-1">
+                        <i data-lucide="key" class="w-4 h-4 text-amber-600"></i> Fechadura
+                    </span>
+                    <span class="text-[10px] text-amber-800 bg-amber-50 px-1.5 py-0.5 rounded font-semibold">Digital</span>
+                </div>
+                <div>
+                    <span class="text-[11px] text-stone-400 block">Código da Porta:</span>
+                    <div class="flex items-center justify-between">
+                        <strong class="text-sm text-stone-900 font-mono tracking-widest" id="lock-pass">#4829*</strong>
+                        <button onclick="copiarTexto('lock-pass', this)" class="text-[11px] font-semibold text-amber-600 hover:text-amber-700">Copiar</button>
+                    </div>
+                </div>
+                <p class="text-[10px] text-stone-400">Pressione #, digite os 4 números e finalize com *.</p>
+            </div>
+        </div>
+
+        <!-- Botão Como Chegar (Waze / Google Maps) -->
+        <div class="bg-forest-900 text-white p-5 rounded-3xl shadow-lg space-y-3">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h3 class="font-bold text-sm text-stone-100 flex items-center gap-1.5">
+                        <i data-lucide="navigation" class="w-4 h-4 text-amberWood"></i> Como Chegar ao Contêiner
+                    </h3>
+                    <p class="text-xs text-stone-400 mt-0.5">Acesso fácil, todo asfaltado até a porteira.</p>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-2 pt-1">
+                <a href="https://waze.com/ul?q=Piracaia" target="_blank" class="bg-stone-800 hover:bg-stone-700 text-white text-xs font-semibold py-2.5 px-3 rounded-xl text-center transition flex items-center justify-center gap-1.5">
+                    <span>Abrir no Waze</span>
+                </a>
+                <a href="https://maps.google.com/?q=Piracaia+SP" target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold py-2.5 px-3 rounded-xl text-center transition flex items-center justify-center gap-1.5">
+                    <span>Google Maps</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Instruções da Casa (Sanando Dúvidas Frequentes) -->
+        <div class="space-y-3">
+            <h3 class="font-bold text-stone-800 text-sm px-1">Instruções de Uso:</h3>
+
+            <!-- Ofurô -->
+            <details class="bg-white rounded-2xl border border-stone-200/80 p-4 shadow-sm group">
+                <summary class="font-bold text-xs text-forest-900 flex items-center justify-between cursor-pointer list-none">
+                    <span class="flex items-center gap-2">
+                        <span>♨️</span> Como Usar o Ofurô Aquecido
+                    </span>
+                    <i data-lucide="chevron-down" class="w-4 h-4 text-stone-400 group-open:rotate-180 transition-transform"></i>
+                </summary>
+                <div class="pt-3 text-xs text-stone-600 space-y-2 border-t border-stone-100 mt-3">
+                    <p>• O painel digital fica na lateral direita do deck.</p>
+                    <p>• Pressione o botão <strong>AQUECER</strong> para atingir a temperatura ideal (36°C a 38°C).</p>
+                    <p>• O botão <strong>LUZ</strong> ativa a cromoterapia com água colorida.</p>
+                    <p>• Por favor, desligue a hidromassagem antes de sair do ofurô.</p>
+                </div>
+            </details>
+
+            <!-- Ar-Condicionado Inverter -->
+            <details class="bg-white rounded-2xl border border-stone-200/80 p-4 shadow-sm group">
+                <summary class="font-bold text-xs text-forest-900 flex items-center justify-between cursor-pointer list-none">
+                    <span class="flex items-center gap-2">
+                        <span>❄️</span> Climatização (Quente / Frio)
+                    </span>
+                    <i data-lucide="chevron-down" class="w-4 h-4 text-stone-400 group-open:rotate-180 transition-transform"></i>
+                </summary>
+                <div class="pt-3 text-xs text-stone-600 space-y-2 border-t border-stone-100 mt-3">
+                    <p>• O controle remoto fica no suporte ao lado da cama queen.</p>
+                    <p>• Modo <strong>COOL</strong> (Frio): Recomendado 23°C no verão.</p>
+                    <p>• Modo <strong>HEAT</strong> (Quente): Para noites frias de serra, use em 25°C.</p>
+                    <p>• O isolamento com lã de rocha mantém a temperatura estável muito rápido.</p>
+                </div>
+            </details>
+
+            <!-- Fogueira Externa & Lareira -->
+            <details class="bg-white rounded-2xl border border-stone-200/80 p-4 shadow-sm group">
+                <summary class="font-bold text-xs text-forest-900 flex items-center justify-between cursor-pointer list-none">
+                    <span class="flex items-center gap-2">
+                        <span>🔥</span> Fogueira Externa sob as Estrelas
+                    </span>
+                    <i data-lucide="chevron-down" class="w-4 h-4 text-stone-400 group-open:rotate-180 transition-transform"></i>
+                </summary>
+                <div class="pt-3 text-xs text-stone-600 space-y-2 border-t border-stone-100 mt-3">
+                    <p>• A lenha fica armazenada no cesto de vime abaixo da bancada do deck.</p>
+                    <p>• Utilize as pastilhas acendedoras fornecidas no kit.</p>
+                    <p>• Utilize apenas o tacho de ferro apropriado na área de cascalho.</p>
+                    <p>• Ao finalizar a noite, certifique-se de apagar totalmente as brasas.</p>
+                </div>
+            </details>
+        </div>
+
+        <!-- Dicas de Piracaia & Delivery no Chalé -->
+        <div class="space-y-3">
+            <h3 class="font-bold text-stone-800 text-sm px-1">Onde Comer & Entregas no Contêiner:</h3>
+
+            <div class="bg-white p-4 rounded-2xl border border-stone-200/80 shadow-sm space-y-3 text-xs">
+                <div class="flex items-center justify-between pb-2 border-b border-stone-100">
+                    <div>
+                        <strong class="text-stone-900 block">🍕 Pizzaria Della Serra (Entrega aqui)</strong>
+                        <span class="text-stone-500">Pizzas artesanais na lenha com entrega rápida no chalé.</span>
+                    </div>
+                    <a href="https://wa.me/5511999999999" target="_blank" class="bg-emerald-50 text-emerald-700 px-2.5 py-1.5 rounded-lg font-bold shrink-0">Pedir</a>
+                </div>
+
+                <div class="flex items-center justify-between pb-2 border-b border-stone-100">
+                    <div>
+                        <strong class="text-stone-900 block">🐟 Restaurante da Represa (Trutas & Peixes)</strong>
+                        <span class="text-stone-500">Vista para a represa a 10 min de carro. Excelente para almoço.</span>
+                    </div>
+                    <span class="text-stone-400 font-semibold shrink-0">10 min</span>
+                </div>
+
+                <div class="flex items-center justify-between">
+                    <div>
+                        <strong class="text-stone-900 block">🧀 Queijaria Artesanal da Mantiqueira</strong>
+                        <span class="text-stone-500">Degustação de queijos premiados e pães de fermentação.</span>
+                    </div>
+                    <span class="text-stone-400 font-semibold shrink-0">15 min</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Botão de Contato com o Anfitrião -->
+        <div class="p-4 rounded-2xl bg-emerald-50 border border-emerald-200 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-emerald-600 text-white flex items-center justify-center shrink-0">
+                    <i data-lucide="message-circle" class="w-5 h-5"></i>
+                </div>
+                <div>
+                    <h4 class="font-bold text-xs text-emerald-950">Precisa de suporte durante a estadia?</h4>
+                    <p class="text-[11px] text-emerald-800">Fale direto com o anfitrião no WhatsApp.</p>
+                </div>
+            </div>
+            <a href="https://wa.me/5511998967740?text=Ol%C3%A1!%20Estou%20hospedado%20no%20EcoContainer%20Piracaia%20e%20tenho%20uma%20d%C3%BAvida:" 
+               target="_blank" 
+               class="bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold px-3.5 py-2 rounded-xl shrink-0 shadow transition">
+                Chamar
+            </a>
+        </div>
+
+        <!-- Horários de Check-in e Check-out -->
+        <div class="text-center text-xs text-stone-400 pt-2 space-y-1">
+            <p>⏰ <strong>Check-in:</strong> A partir das 15h00 | <strong>Check-out:</strong> Até as 12h00</p>
+            <p>Tenha uma estadia inesquecível em Piracaia!</p>
+        </div>
+
+    </main>
+
+    <script>
+        lucide.createIcons();
+
+        function copiarTexto(elementId, btn) {
+            const el = document.getElementById(elementId);
+            if (!el) return;
+            navigator.clipboard.writeText(el.innerText).then(() => {
+                const originalText = btn.innerText;
+                btn.innerText = 'Copiado!';
+                btn.classList.add('text-emerald-700', 'font-bold');
+                setTimeout(() => {
+                    btn.innerText = originalText;
+                    btn.classList.remove('text-emerald-700', 'font-bold');
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>

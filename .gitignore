@@ -1,0 +1,15 @@
+# Dependências
+node_modules/
+
+# Variáveis de Ambiente & Chaves Privadas (NUNCA subir para o GitHub)
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+npm-debug.log*
+
+# Sistema Operacional
+.DS_Store
+Thumbs.db
