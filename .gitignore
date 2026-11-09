@@ -14,3 +14,10 @@ npm-debug.log*
 .DS_Store
 Thumbs.db
 
+# Scrapes & Temporários de Inspeção
+airbnb_photos/
+airbnb_raw.html
+airbnb_images.json
+labeled_photos.json
+
+
