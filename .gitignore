@@ -21,3 +21,6 @@ airbnb_images.json
 labeled_photos.json
 
 
+
+# Vídeos pesados
+videos/*.mp4
